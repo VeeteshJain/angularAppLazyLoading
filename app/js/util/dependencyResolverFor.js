@@ -1,6 +1,6 @@
 define([
     ], function(){
-    return function(dependencies,app)
+    return function(dependencies)
     {
         var definition =
         {

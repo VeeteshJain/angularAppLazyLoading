@@ -8,11 +8,16 @@
 	</head>
 	<body >
 		<h1>AngularJS + RequireJS</h1>
-		<ul class="menu">
-			<li><a href="#/view1">View 1</a></li>
-			<li><a href="#/view2">View 2</a></li>
-		</ul>
-		<div ng-view></div>
-		<script data-main="app/js/main" src="/bower_components/requirejs/require.js"></script>		
+		<!-- <div ng-view></div> -->
+		<script data-main="app/js/main" src="/bower_components/requirejs/require.js"></script>	
+
+		<div ui-view='header'></div>
+		<div ui-view='subHeader'></div>
+		<div ui-view='subNav'></div>
+
+		<div ui-view='main'></div>
+
+		<div ui-view='subFooter'></div>
+		<div ui-view='footer'></div>
 	</body>
 </html>

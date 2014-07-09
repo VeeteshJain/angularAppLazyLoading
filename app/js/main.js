@@ -4,7 +4,10 @@ require.config({
 		angularRoute: '../../bower_components/angular-route/angular-route',
 		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
 		text: '../../bower_components/requirejs-text/text',
-		jquery: '../../bower_components/jquery/jquery'
+		jquery: '../../bower_components/jquery/dist/jquery',
+		'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-custom-0.10.0',
+		//'ui-bootstrap-tpls': '../../bower_components/angular-bootstrap/ui-bootstrap-custom-tpls-0.10.0',
+		'ui.router': '../../bower_components/angular-ui-router/release/angular-ui-router'
 	},
 	shim: {
 		'angular' : {'exports' : 'angular',deps: ['jquery']},
@@ -12,6 +15,15 @@ require.config({
 		'angularMocks': {
 			deps:['angular'],
 			'exports':'angular.mock'
+		},
+		'ui.bootstrap' : {
+			deps:['angular']
+		},
+/*		'ui-bootstrap-tpls' : {
+			deps:['angular']
+		},*/
+		'ui.router' : {
+			deps:['angular']
 		}
 	},
 	priority: [
