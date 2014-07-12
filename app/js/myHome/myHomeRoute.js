@@ -24,9 +24,13 @@ define([
 	//myHomeRoute.dependencies.push('myHome/myHomeApp');
 
 	myHomeRoute.actions.when['/MY view 1'].controller = 'myHomeCtrl1';
+	myHomeRoute.actions.when['/MY view 1'].dependencies = [];
+	myHomeRoute.actions.when['/MY view 1'].dependencies.push('myHome/controllers/myHomeCtrl1');
 	myHomeRoute.actions.when['/MY view 1'].templateUrl = basePath+'/templates/partial1.html';
 
 	myHomeRoute.actions.when['/MY view 2'].controller = 'myHomeCtrl2';
+	myHomeRoute.actions.when['/MY view 2'].dependencies = [];
+	myHomeRoute.actions.when['/MY view 2'].dependencies.push('myHome/controllers/myHomeCtrl2');
 	myHomeRoute.actions.when['/MY view 2'].templateUrl = basePath+'/templates/partial2.html';
 
 	myHomeRoute.actions.when['/test'].template = '<p>HELLO WORLD</p>';

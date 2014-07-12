@@ -1,5 +1,5 @@
-define([
-    ], function(){
+define([], function()
+{
     return function(dependencies)
     {
         var definition =

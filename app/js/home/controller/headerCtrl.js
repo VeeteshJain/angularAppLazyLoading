@@ -6,6 +6,6 @@ define([
 
 	/* Controllers */
 	app.controller('headerCtrl', ['$scope', function ($scope) {
-		$scope.headerContent = 'This is my header';
+		$scope.headerContent = 'This is my HEADER';
 	}]);
 });

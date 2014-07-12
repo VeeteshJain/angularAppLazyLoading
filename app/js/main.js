@@ -5,8 +5,8 @@ require.config({
 		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
 		text: '../../bower_components/requirejs-text/text',
 		jquery: '../../bower_components/jquery/dist/jquery',
-		'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-custom-0.10.0',
-		//'ui-bootstrap-tpls': '../../bower_components/angular-bootstrap/ui-bootstrap-custom-tpls-0.10.0',
+		//'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap',
+		'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls',
 		'ui.router': '../../bower_components/angular-ui-router/release/angular-ui-router'
 	},
 	shim: {
@@ -19,9 +19,6 @@ require.config({
 		'ui.bootstrap' : {
 			deps:['angular']
 		},
-/*		'ui-bootstrap-tpls' : {
-			deps:['angular']
-		},*/
 		'ui.router' : {
 			deps:['angular']
 		}
@@ -38,10 +35,9 @@ require( [
 	'angular',
 	'app',
 	'appConfig'
-], function(angular, app, mainRoute) {
+], function(angular, app, appConfig) {
 	'use strict';
 	var $html = angular.element(document.getElementsByTagName('html')[0]);
-
 	angular.element().ready(function() {
 		angular.resumeBootstrap([app['name']]);
 	});

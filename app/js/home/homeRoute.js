@@ -2,18 +2,29 @@ define([
 	], function() {
 	'use strict';
 	var homeRoute = {
-		'state' : {
+		'states' : {
 			'home' : {
 				url : '/',
 				'views' : {
+					'' : {
+						templateUrl : 'app/js/home/templates/home.html',
+						controller : 'homeCtrl',
+						dependencies : ['home/controller/homeCtrl']
+					},
 					'header' : {
-						templateUrl : 'app/js/home/templates/header.html'
+						templateUrl : 'app/js/home/templates/header.html',
+						controller : 'headerCtrl',
+						dependencies : ['home/controller/headerCtrl']
 					},
 					'main' : {
-						templateUrl : 'app/js/home/templates/home.html'
+						templateUrl : 'app/js/home/templates/main.html',
+						controller : 'mainCtrl',
+						dependencies : ['home/controller/mainCtrl']
 					},
 					'footer' : {
-						templateUrl : 'app/js/home/templates/footer.html'
+						templateUrl : 'app/js/home/templates/footer.html',
+						controller : 'footerCtrl',
+						dependencies : ['home/controller/footerCtrl']
 					}
 				}
 			},

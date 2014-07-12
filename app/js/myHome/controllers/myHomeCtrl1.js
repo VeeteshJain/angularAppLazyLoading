@@ -6,6 +6,7 @@ define([
 	'use strict';
 
 	/* Controllers */
+	debugger;
 	app.controller('myHomeCtrl1', ['$scope', 'version', function ($scope, version) {
 		$scope.scopedAppVersion = version;
 		//$scope.scopedAppVersion = 'this is test version';

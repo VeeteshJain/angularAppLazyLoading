@@ -4,6 +4,10 @@
 		<title>Angular-RequireJS sample app</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
+		<!-- Bootstrap CSS -->
+    	<link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    	<!-- custom CSS -->
 		<link rel="stylesheet" type="text/css" media="all" href="app/css/app.css" />
 	</head>
 	<body >
@@ -16,6 +20,9 @@
 		<div ui-view='subNav'></div>
 
 		<div ui-view='main'></div>
+		
+		<div ng-view></div>
+		<div ui-view></div>
 
 		<div ui-view='subFooter'></div>
 		<div ui-view='footer'></div>

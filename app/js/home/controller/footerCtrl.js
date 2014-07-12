@@ -6,6 +6,6 @@ define([
 
 	/* Controllers */
 	app.controller('footerCtrl', ['$scope', function ($scope) {
-		$scope.footerContent = 'This is my footer';
+		$scope.footerContent = 'This is my FOOTER';
 	}]);
 });

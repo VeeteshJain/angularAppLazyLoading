@@ -5,7 +5,7 @@ define([
 	'use strict';
 
 	/* Controllers */
-	app.controller('home', ['$scope', function ($scope) {
-		$scope.homeContent = 'This is my Home';
+	app.controller('mainCtrl', ['$scope', function ($scope) {
+		$scope.mainContent = 'This is my MAIN';
 	}]);
 });

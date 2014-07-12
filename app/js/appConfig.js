@@ -32,29 +32,23 @@ define([
 	        app.service    = $provide.service;
 
 	        //$urlRouterProvider.otherwise("/home");
-	        
+
 	        for(var myAppRoute in allAppRoute){
-	        	for(var name in allAppRoute[myAppRoute].state){
-
-	        		var views = allAppRoute[myAppRoute]['state'][name]['views'];
-
-	        		for(var view in allAppRoute[myAppRoute]['state'][name].views){
-	        			allAppRoute[myAppRoute]['state'][name]['views'][view]['dependencies'] != undefined ? allAppRoute[myAppRoute]['state'][name]['views'][view].resolve = dependencyResolverFor(allAppRoute[myAppRoute]['state'][name]['views'][view]['dependencies']) : undefined;
+	        	for(var state in allAppRoute[myAppRoute].states){
+	        		var stateParam = {};
+	        		angular.extend(stateParam,allAppRoute[myAppRoute]['states'][state]);
+	        		stateParam.dependencies != undefined ? stateParam.resolve = dependencyResolverFor(stateParam.dependencies) : '';
+	        		for(var view in stateParam.views){
+	        			stateParam['views'][view].dependencies != undefined ? stateParam['views'][view].resolve = dependencyResolverFor(stateParam['views'][view].dependencies) : '';
 	        		}
-	        		
-	        		debugger;
-        			$stateProvider['state'](name,{
-        				url : allAppRoute[myAppRoute]['state'][name].url,
-        				templateUrl : allAppRoute[myAppRoute]['state'][name].templateUrl,
-        				views : allAppRoute[myAppRoute]['state'][name].views
-
-        			});
+	        		$stateProvider['state'](state,stateParam);
 	        	}
 	        }
+	        
 
             //$locationProvider.html5Mode(true);
-            debugger;
-			/*for(var myAppRoute in allAppRoute){
+
+/*			for(var myAppRoute in allAppRoute){
 				for(var action in allAppRoute[myAppRoute].actions){
 					for(var path in allAppRoute[myAppRoute]['actions'][action]){
 						$routeProvider[action](path,{
@@ -62,7 +56,8 @@ define([
 							template: allAppRoute[myAppRoute]['actions'][action][path].template,
 							templateUrl: allAppRoute[myAppRoute]['actions'][action][path].templateUrl,
 							redirectTo: allAppRoute[myAppRoute]['actions'][action][path].redirectTo,
-							resolve:dependencyResolverFor(allAppRoute[myAppRoute].dependencies)
+							//resolve:dependencyResolverFor(allAppRoute[myAppRoute].dependencies)
+							resolve:dependencyResolverFor(allAppRoute[myAppRoute]['actions'][action][path].dependencies)
 						});
 					}
 				}
