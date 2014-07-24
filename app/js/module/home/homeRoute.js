@@ -1,30 +1,41 @@
 define([
 	], function() {
 	'use strict';
-	var homeRoute = {
+	var templateBase = 'app/js/templates/homeTmp/',
+		moduleBase = 'module/home/',
+		homeRoute = {
 		'states' : {
 			'home' : {
 				url : '/',
+				dependencies : [
+					moduleBase+'directives/headerDir'
+				],
 				'views' : {
 					'' : {
-						templateUrl : 'app/js/home/templates/home.html',
+						templateUrl : templateBase+'home.html',
 						//controller : 'homeCtrl',
-						dependencies : ['home/controller/homeCtrl']
+						dependencies : [moduleBase+'controllers/homeCtrl']
+					},
+					'masterNav' : {
+						dependencies : [moduleBase+'controllers/masterCtrl']
 					},
 					'header' : {
-						templateUrl : 'app/js/home/templates/header.html',
+						templateUrl : templateBase+'header.html',
 						//controller : 'headerCtrl',
-						dependencies : ['home/controller/headerCtrl','home/services/headerSvc']
+						dependencies : [
+							moduleBase+'controllers/headerCtrl',
+							moduleBase+'services/headerSvc'
+						]
 					},
 					'main' : {
-						templateUrl : 'app/js/home/templates/main.html',
+						templateUrl : templateBase+'main.html',
 						//controller : 'mainCtrl',
-						dependencies : ['home/controller/mainCtrl']
+						dependencies : [moduleBase+'controllers/mainCtrl']
 					},
 					'footer' : {
-						templateUrl : 'app/js/home/templates/footer.html',
+						templateUrl : templateBase+'footer.html',
 						//controller : 'footerCtrl',
-						dependencies : ['home/controller/footerCtrl']
+						dependencies : [moduleBase+'controllers/footerCtrl']
 					}
 				}
 			}/*,
@@ -47,6 +58,5 @@ define([
 			}*/
 		}
 	};
-	var basePath = 'app/js/home';
 	return homeRoute;
 });

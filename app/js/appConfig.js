@@ -5,6 +5,7 @@ define([
 	'util/dependencyResolverFor'
 	], function(angular, app,allAppRoute,dependencyResolverFor) {
 	'use strict';
+	debugger;
 	return app.config(
 	[
 		'$routeProvider',
@@ -13,6 +14,7 @@ define([
         '$compileProvider',
         '$filterProvider',
         '$provide',
+        '$injector',
         '$stateProvider',
         '$urlRouterProvider',
          function(
@@ -21,16 +23,21 @@ define([
          	$controllerProvider,
          	$compileProvider,
          	$filterProvider,
+         	$injector,
          	$provide,
          	$stateProvider,
          	$urlRouterProvider
          	) {
+         	debugger;
 			app.controller = $controllerProvider.register;
 	        app.directive  = $compileProvider.directive;
 	        app.filter     = $filterProvider.register;
-	        app.factory    = $provide.factory;
-	        app.service    = $provide.service;
-
+	        //app.factory    = $provide.factory;
+	        //app.factory    = $provide.factory;
+	        app.factory    = $injector.factory;
+	        app.service    = $injector.service;
+	        app.$injector  = $injector;
+	        app.$myProvide   = $provide;
 	        //$urlRouterProvider.otherwise("/home");
 
 	        for(var myAppRoute in allAppRoute){

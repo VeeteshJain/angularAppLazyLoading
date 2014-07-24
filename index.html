@@ -3,28 +3,27 @@
 	<head>
 		<title>Angular-RequireJS sample app</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
 		<!-- Bootstrap CSS -->
     	<link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
     	<!-- custom CSS -->
 		<link rel="stylesheet" type="text/css" media="all" href="app/css/app.css" />
+		<!-- meta tag section -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
 	</head>
-	<body >
-		<h1>AngularJS + RequireJS</h1>
-		<!-- <div ng-view></div> -->
-		<script data-main="app/js/main" src="/bower_components/requirejs/require.js"></script>	
-
-		<div ui-view='header'></div>
-		<div ui-view='subHeader'></div>
-		<div ui-view='subNav'></div>
-
-		<div ui-view='main'></div>
-		
-		<div ng-view></div>
-		<div ui-view></div>
-
-		<div ui-view='subFooter'></div>
-		<div ui-view='footer'></div>
+	<body>
+		<div class="container">
+			<div ui-view='masterNav'>
+				<div ui-view='header' class='css-header-fix'></div>
+				<div ui-view='subHeader'></div>
+				<div ui-view='subNav'></div>
+				<div ui-view='main'></div>
+				<div ng-view></div>
+				<div ui-view></div>
+				<div ui-view='subFooter'></div>
+				<div ui-view='footer'></div>
+			</div>
+		</div>
+		<!-- scripts section -->
+		<script data-main="app/js/main" src="/bower_components/requirejs/require.js"></script>
 	</body>
 </html>

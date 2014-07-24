@@ -1,0 +1,21 @@
+{
+  "category": {
+    "mobile": {
+      "apple": {
+        "mobId": "01"
+      },
+      "nokia": {
+        "mobId": "02"
+      },
+      "sony": {
+        "mobId": "03"
+      },
+      "samsung": {
+        "mobId": "04"
+      },
+      "micromax": {
+        "mobId": "05"
+      }
+    }
+  }
+}

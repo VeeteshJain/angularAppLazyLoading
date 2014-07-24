@@ -31,3 +31,8 @@
 
 /* bootstrap CSS fix */
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+/*header fix*/
+.css-header-fix{
+  margin-bottom: 60px;
+}
