@@ -49,6 +49,7 @@ define([
 	        			stateParam['views'][view].dependencies != undefined ? stateParam['views'][view].resolve = dependencyResolverFor(stateParam['views'][view].dependencies) : '';
 	        		}
 	        		$stateProvider['state'](state,stateParam);
+	        		//$stateProvider['state'](stateParam);
 	        	}
 	        }
 	        

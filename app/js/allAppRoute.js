@@ -30,6 +30,6 @@ define([
 	}
 	allAppRoute['homeRoute'] = homeRoute;
 	debugger;
-	allAppRoute['loginRoute'] = loginRoute;
+	//allAppRoute['loginRoute'] = loginRoute;
 	return allAppRoute;
 });
