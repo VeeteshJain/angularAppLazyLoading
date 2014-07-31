@@ -16,11 +16,11 @@ define([
 			'main.home' : {
 				url : '^/home',
 				'views' : {
-					'' : {
+					/*'' : {
 						templateUrl : templateBase+'home.html',
 						//controller : 'homeCtrl',
 						dependencies : [moduleBase+'controllers/homeCtrl']
-					},
+					},*/
 					'header' : {
 						templateUrl : templateBase+'header.html',
 						//controller : 'headerCtrl',
@@ -36,6 +36,14 @@ define([
 						dependencies : [
 							moduleBase+'controllers/footerCtrl',
 							moduleBase+'directives/footerDir'
+						]
+					},
+					'mainView' : {
+						templateUrl : templateBase+'home.html',
+						//controller : 'homeCtrl',
+						dependencies : [
+							moduleBase+'controllers/homeCtrl'
+							//moduleBase+'controllers/homeDir',
 						]
 					}
 				}

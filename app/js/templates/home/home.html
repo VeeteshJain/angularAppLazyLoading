@@ -1,3 +1,25 @@
-<div ng-controller="homeCtrl">
-	<div>HELLO WORLD go to login {{homeContent}} is home content</div>
+<div ng-controller='homeCtrl'>
+	this is a home content- {{homeContent}} -and this is by home controller
+	<div class="row">
+		<div class="col-md-2">
+		col-md-7
+			<div class="checkbox"><label>
+				<input type="checkbox" ng-model="categoryAccordionOpts.status.allOpen"> open all{{categoryAccordionOpts.status.allOpen}}
+			</label></div>
+			<accordion>
+				<accordion-group ng-repeat="cat in categoryAccordionOpts.categorys | orderBy : categoryAccordionOpts.order : true" all-open="categoryAccordionOpts.status.allOpen" open-status="cat.openStatus">
+					<accordion-heading ng-click="categoryAccordionOpts.status.isOpen = !categoryAccordionOpts.status.isOpen">
+						{{cat.categoryLink}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': cat.openStatus, 'glyphicon-chevron-right': !cat.openStatus}"></i>
+					</accordion-heading>
+						<ul>
+							<li ng-repeat="item in cat.values">{{item}}</li>
+							<li>{{categoryAccordionOpts.status.isOpen}}</li>
+						</ul>
+				</accordion-group>
+			</accordion>
+		</div>
+		<div class="col-md-7 col-md-offset-1">
+			col-md-7
+			<>
+	</div>
 </div>
