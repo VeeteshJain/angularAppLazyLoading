@@ -2478,8 +2478,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
           'content="'+startSym+'tt_content'+endSym+'" '+
           'placement="'+startSym+'tt_placement'+endSym+'" '+
           'animation="tt_animation" '+
-          'is-open="tt_isOpen" '+
-          //'sso-forms="'+startSym+'tt_ssoForms'+endSym+'" '+
+          'is-open="tt_isOpen"'+
           '>'+
         '</div>';
 
@@ -4029,6 +4028,7 @@ angular.module("template/popover/popover.html", []).run(["$templateCache", funct
     "  </div>\n" +
     "</div>\n" +
     "");
+  debugger;
 }]);
 
 angular.module("template/progressbar/bar.html", []).run(["$templateCache", function($templateCache) {

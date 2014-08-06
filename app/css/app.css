@@ -36,3 +36,40 @@
 .css-header-fix{
   margin-bottom: 60px;
 }
+
+/*UI bootstrap alert on top*/
+.overlap-alert-container {
+  position: fixed;
+  z-index: 2000;
+}
+/*.overlap-alert-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.overlap-alert-container > .alert {
+  position: relative;
+  z-index: 999999;
+  width: 400px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 5px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}*/
+
+/*main-container-pading*/
+.main-container-pading{
+  padding-left : 5%;
+  padding-right: 5%
+}

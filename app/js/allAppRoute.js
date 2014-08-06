@@ -17,19 +17,17 @@ define([
     app.filter
     app.factory
     app.service*/
-
+/*    debugger;
 	for(var commonModule in commonRoute) {
-		for(var type in commonRoute[commonModule]){
-/*			var promose = dependencyResolverFor(commonRoute[commonModule][type].dependencies);
+		for(var resourceType in commonRoute[commonModule]){
+			var promose = dependencyResolverFor(commonRoute[commonModule][resourceType].dependencies);
 			promose.then(function(){
 				debugger;
 				//app[type]();
-			});*/
+			});
 		}
-
-	}
+	}*/
 	allAppRoute['homeRoute'] = homeRoute;
-	debugger;
 	//allAppRoute['loginRoute'] = loginRoute;
 	return allAppRoute;
 });

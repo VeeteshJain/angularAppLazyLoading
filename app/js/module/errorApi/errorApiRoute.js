@@ -1,8 +1,8 @@
 define([
 	], function() {
 	'use strict';
-	var templateBase = 'app/js/templates/home/',
-		moduleBase = 'module/home/',
+	var templateBase = 'app/js/templates/errorHandler/',
+		moduleBase = 'module/errorHandlers/',
 		homeRoute = {
 		'states' : {
 			'main' : {
@@ -27,7 +27,6 @@ define([
 						dependencies : [
 							moduleBase+'controllers/headerCtrl',
 							moduleBase+'directives/headerDir',
-							moduleBase+'directives/hoverCard',
 							moduleBase+'services/headerSvc'
 						]
 					},

@@ -24,7 +24,7 @@ define([
 			scope : {
 				footerApi : '&footerApi'
 			},
-			templateUrl : 'app/js/templates/common/footerDir.html'
+			templateUrl : 'app/js/templates/common/directives/footerDir.html'
 		}
 	});
 });

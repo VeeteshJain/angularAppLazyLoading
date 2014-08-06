@@ -9,7 +9,6 @@ define([
 		$rootScope.pageState = 'home';
 		$scope.buttonTest = 1;
 		$scope.catData = 'TEST';
-		$scope.mySso = '123';
 		$scope.getCat = function(){
 			debugger;
 			this.$parent.pageType = 'category page';
