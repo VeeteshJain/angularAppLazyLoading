@@ -1,8 +1,8 @@
 <div ng-controller='mainCtrl'>
 	<div ui-view='header' class='css-header-fix'></div>
-	<div class='overlap-alert-container col-md-10'>
+<!-- 	<div class='overlap-alert-container col-md-10'>
 		<alert ng-repeat="alert in errorApi.getErrors()" type="{{alert.type}}" close="errorApi.removeError($index)">{{alert.msg}}<input type='checkbox'></alert>
-	</div>
+	</div> -->
 	<div ui-view='subHeader'></div>
 	<div ui-view='subNav'></div>
 	<div ui-view='mainView'></div>

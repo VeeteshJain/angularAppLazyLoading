@@ -10,6 +10,10 @@ define([
 		$scope.buttonTest = 1;
 		$scope.catData = 'TEST';
 		$scope.mySso = '123';
+		$scope.openHoverCard = true;
+		$scope.$watch('mySso',function(newValue, oldValue, t_scope){
+			console.log(t_scope.mySso);
+		});
 		$scope.getCat = function(){
 			debugger;
 			this.$parent.pageType = 'category page';

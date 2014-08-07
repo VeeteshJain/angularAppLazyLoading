@@ -4,6 +4,17 @@ define([
 	], function(app,angular) {
 	'use strict';
 
+	var openTrigger = function(){
+		debugger;
+	}
+
+	var closeTrigger = function(){
+		debugger;	
+	}
+
+	debugger;
+	app.$myProvide.get('$tooltipProvider').setTriggers( {openTrigger: closeTrigger} ) ;
+
   	/* Directives */
 	app.directive('hovercard', [ '$tooltip', function($tooltip) {
 		var hover = $tooltip( 'hovercard', 'hovercard', 'click' );
@@ -29,7 +40,7 @@ define([
 			link : link,
 			controller : controller,
 			//transclude : true,
-			scope : {title: '@', content: '=', placement: '@', animation: '&', isOpen: '&', ssoForms: '@' },
+			scope : {title: '@', content: '@', placement: '@', animation: '&', isOpen: '&', ssoForms: '@' },
 			//templateUrl: 'template/popover/popover.html'
 			template : '<div class="popover {{placement}}" ng-class="{ in: isOpen(), fade: animation() }"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title" ng-bind="title" ng-show="title"></h3>'+
 			'<p ng-bind="ssoForms">test</p>'+'<p>qwerty {{ssoForms}}</p>'

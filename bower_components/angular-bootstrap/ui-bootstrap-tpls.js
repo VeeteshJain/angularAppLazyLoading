@@ -2479,7 +2479,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
           'placement="'+startSym+'tt_placement'+endSym+'" '+
           'animation="tt_animation" '+
           'is-open="tt_isOpen" '+
-          //'sso-forms="'+startSym+'tt_ssoForms'+endSym+'" '+
+          'sso-forms="'+startSym+'tt_ssoForms'+endSym+'" '+
           '>'+
         '</div>';
 
@@ -2491,6 +2491,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
 
           return function link ( scope, element, attrs ) {
             var tooltip;
+            debugger;
             var transitionTimeout;
             var popupTimeout;
             var appendToBody = angular.isDefined( options.appendToBody ) ? options.appendToBody : false;
