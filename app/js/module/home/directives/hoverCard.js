@@ -13,7 +13,18 @@ define([
 	}
 
 	debugger;
-	app.$myProvide.get('$tooltipProvider').setTriggers( {openTrigger: closeTrigger} ) ;
+	//app.$myProvide.get('$tooltipProvider').setTriggers( {openTrigger: closeTrigger} ) ;
+	app.$myProvide.get('$tooltipProvider').options( {getTemplate:function(directiveName, startSym, endSym) {
+      return '<div '+ directiveName +'-popup '+
+            'title="'+startSym+'tt_title'+endSym+'" '+
+            'content="'+startSym+'tt_content'+endSym+'" '+
+            'placement="'+startSym+'tt_placement'+endSym+'" '+
+            'animation="tt_animation" '+
+            'is-open="tt_isOpen" '+
+            'sso-forms="'+startSym+'tt_ssoForms'+endSym+'" '+
+            '>'+
+          '</div>';
+    }} ) ;
 
   	/* Directives */
 	app.directive('hovercard', [ '$tooltip', function($tooltip) {

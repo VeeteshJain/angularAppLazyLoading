@@ -2391,8 +2391,29 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
   var defaultOptions = {
     placement: 'top',
     animation: true,
-    popupDelay: 0
+    popupDelay: 0,
+    getTemplate: function(directiveName, startSym, endSym ) {
+      return '<div '+ directiveName +'-popup '+
+            'title="'+startSym+'tt_title'+endSym+'" '+
+            'content="'+startSym+'tt_content'+endSym+'" '+
+            'placement="'+startSym+'tt_placement'+endSym+'" '+
+            'animation="tt_animation" '+
+            'is-open="tt_isOpen"'+
+            '>'+
+          '</div>';
+    }
   };
+  
+/*  this.getTemplate = function(directiveName, startSym, endSym ) {
+    return '<div '+ directiveName +'-popup '+
+          'title="'+startSym+'tt_title'+endSym+'" '+
+          'content="'+startSym+'tt_content'+endSym+'" '+
+          'placement="'+startSym+'tt_placement'+endSym+'" '+
+          'animation="tt_animation" '+
+          'is-open="tt_isOpen"'+
+          '>'+
+        '</div>';
+  };*/
 
   // Default hide triggers for each show trigger
   var triggerMap = {
@@ -2472,7 +2493,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
 
       var startSym = $interpolate.startSymbol();
       var endSym = $interpolate.endSymbol();
-      var template =
+/*      var template =
         '<div '+ directiveName +'-popup '+
           'title="'+startSym+'tt_title'+endSym+'" '+
           'content="'+startSym+'tt_content'+endSym+'" '+
@@ -2481,7 +2502,9 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
           'is-open="tt_isOpen" '+
           'sso-forms="'+startSym+'tt_ssoForms'+endSym+'" '+
           '>'+
-        '</div>';
+        '</div>';*/
+        debugger;
+        var template = options.getTemplate(directiveName, startSym, endSym);
 
       return {
         restrict: 'EA',

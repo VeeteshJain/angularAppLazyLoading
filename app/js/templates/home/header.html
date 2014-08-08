@@ -7,12 +7,14 @@
 
 	<p>SSO</p>
 	<input ng-model='mySso' style="margin-top: 60px;">Mouseenter</input>
+	<p>placement</p>
+	<input ng-model='placement' style="margin-top: 60px;">placement</input>
 
 	<input type='checkbox' ng-model='openHoverCard' style="margin-top: 60px;">is open</input>
 
 
 	<button popover="I appeared on mouse enter!" is-open='openHoverCard' popover-trigger="click" class="btn btn-default test " style="margin-top: 60px;">Mouseenter</button>
 	<p>test {{mySso}}</p>
-	<button hovercard='hover card content' data-sso-forms='mySso' hovercard-title='test' hovercard-content='popover content' hovercard-trigger='manual' hovercard-placement='bottom' class="btn btn-default test " style="margin-top: 60px;">hover-card</button>
+	<button hovercard='hover card content' data-sso-forms='mySso' hovercard-title='test' hovercard-content='popover content' hovercard-trigger='click' hovercard-placement='bottom' class="btn btn-default test " style="margin-top: 60px;">hover-card</button>
 
 </div>
