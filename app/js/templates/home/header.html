@@ -6,15 +6,15 @@
 
 
 	<p>SSO</p>
-	<input ng-model='mySso' style="margin-top: 60px;">Mouseenter</input>
+	<input ng-model='mySso' style="margin-top: 60px;">sso</input>
 	<p>placement</p>
-	<input ng-model='placement' style="margin-top: 60px;">placement</input>
+	<input ng-model='contentHtml' style="margin-top: 60px;">content html</input>
 
 	<input type='checkbox' ng-model='openHoverCard' style="margin-top: 60px;">is open</input>
 
 
-	<button popover="I appeared on mouse enter!" is-open='openHoverCard' popover-trigger="click" class="btn btn-default test " style="margin-top: 60px;">Mouseenter</button>
+	<button popover="I appeared on mouse enter!" is-open='openHoverCard' popover-trigger="click" class="btn btn-default test " popover-title="aa" style="margin-top: 60px;">Mouseenter</button>
 	<p>test {{mySso}}</p>
-	<button hovercard='hover card content' data-sso-forms='mySso' hovercard-title='test' hovercard-content='popover content' hovercard-trigger='click' hovercard-placement='bottom' class="btn btn-default test " style="margin-top: 60px;">hover-card</button>
+	<button hovercard='hover card content' data-sso-forms='mySso' data-content-html='contentHtml' data-title-html='titleHtml' hovercard-title='hovercard title' hovercard-content='hovercard-content' hovercard-trigger='click' hovercard-placement='bottom' class="btn btn-default test " style="margin-top: 60px;">hover-card</button>
 
 </div>

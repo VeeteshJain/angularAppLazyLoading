@@ -7,7 +7,8 @@ require.config({
 		jquery: '../../bower_components/jquery/dist/jquery',
 		//'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap',
 		'ui.bootstrap': '../../bower_components/angular-bootstrap/ui-bootstrap-tpls',
-		'ui.router': '../../bower_components/angular-ui-router/release/angular-ui-router'
+		'ui.router': '../../bower_components/angular-ui-router/release/angular-ui-router',
+		'ngSanitize': '../../bower_components/angular-sanitize/angular-sanitize'
 	},
 	shim: {
 		'angular' : {'exports' : 'angular',deps: ['jquery']},
@@ -21,6 +22,9 @@ require.config({
 		},
 		'ui.router' : {
 			deps:['angular']
+		},
+		'ngSanitize' : {
+			deps : ['angular']
 		}
 	},
 	priority: [
