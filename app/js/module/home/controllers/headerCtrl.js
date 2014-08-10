@@ -13,10 +13,17 @@ define([
 		$scope.openHoverCard = true;
 		$scope.contentHtml = '<div class="myContent"><p>test popover content by html</p><br><input type="text"> test </input></div>';
 		$scope.titleHtml = '<div class="myTitle"><p>test popover title by html</p><br><input type="text"></input></div>';
-		
+
 		$scope.$watch('mySso',function(newValue, oldValue, t_scope){
 			console.log(t_scope.mySso);
 		});
+
+		$scope.myData = [{name: "Moroni", age: 50},
+                     {name: "Tiancum", age: 43},
+                     {name: "Jacob", age: 27},
+                     {name: "Nephi", age: 29},
+                     {name: "Enos", age: 34}];
+
 		$scope.getCat = function(){
 			debugger;
 			this.$parent.pageType = 'category page';

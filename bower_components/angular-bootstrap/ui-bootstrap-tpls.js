@@ -2437,6 +2437,9 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
 	this.options = function( value ) {
 		angular.extend( globalOptions, value );
 	};
+  this.getOptions = function( value ) {
+    return angular.extend({}, defaultOptions, globalOptions);
+  };
 
   /**
    * This allows you to extend the set of trigger mappings available. E.g.:

@@ -66,4 +66,64 @@ define([
 			'<div class="popover-content"><div bind-html-unsafe="contentHtml"></div></div></div></div>'
 		}
 	}]);
+
+	
+	app.directive('popoverHtmlUnsafe', [ '$tooltip', function($tooltip) {
+		var hover = $tooltip( 'popoverHtmlUnsafe', 'popoverHtmlUnsafe', 'click' );
+		debugger;
+/*		hover.scope = {
+			tt_ssoForms: '=ssoForms',
+			tt_contentHtml: '=contentHtml',
+			tt_titleHtml: '=titleHtml'
+		};*/
+		return hover;
+	}]);
+
+	app.directive('popoverHtmlUnsafePopup', [ '$tooltip', function($tooltip) {
+		function link($scope, element, attributes, controller){
+			debugger;
+			/*var contentHtml = '<p> content html </p>';
+			$scope.content = 'contentHtml';*/
+		}
+		function controller( $scope, $element, $attrs ){
+			debugger;
+			/*var contentHtml = '<p> content html </p>';
+			$scope.content = 'contentHtml';*/
+		}
+		return {
+			restrict : 'EA',
+			replace : true,
+			link : link,
+			controller : controller,
+			//transclude : true,
+			scope : {title: '@', content: '@', placement: '@', animation: '&', isOpen: '&', ssoForms: '@'},
+			//templateUrl: 'template/popover/popover.html'
+			template : '<div class="popover {{placement}}" ng-class="{ in: isOpen(), fade: animation() }"><div class="arrow"></div><div class="popover-inner">'+
+			//'<h3 class="popover-title" ng-bind="title" ng-show="title"></h3>'+
+			'<h3 class="popover-title" ng-show="title"><div bind-html-unsafe="title"></div></h3>'+
+			'<div class="popover-content" ng-show="content"><div model-html-unsafe="content"></div></div>'+
+			'</div></div>'
+		}
+	}]);
+
+	app.directive('modelHtmlUnsafe', ['$compile', function($compile) {
+		function link($scope, $element, $attributes, controller){
+			debugger;
+			$element.addClass('ng-binding').data('$binding', $attributes.modelHtmlUnsafe);
+			$scope.$watch($attributes.modelHtmlUnsafe, function modelHtmlUnsafeWatchAction(value) {
+				debugger;
+				$element.html(value || '');
+				$compile($element.contents())($scope);
+			});
+		}
+		function controller($scope, $element, $attrs ){
+			debugger;
+		}
+		return {
+			restrict : 'EA',
+			replace : true,
+			link : link,
+			controller : controller
+		}
+	}]);
 });
