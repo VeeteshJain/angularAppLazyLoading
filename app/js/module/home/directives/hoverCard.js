@@ -71,6 +71,14 @@ define([
 			tt_contentHtml: '=contentHtml',
 			tt_titleHtml: '=titleHtml'
 		};
+		var compile = angular.copy(hover.compile);
+		hover.compile = function(tElem, tAttrs){
+			debugger;
+			tAttrs.$observe('popoverHtmlUnsafeShow', function ( val ) {
+              debugger;
+            });
+			return compile(tElem, tAttrs);
+		}
 		return hover;
 	}]);
 
@@ -84,7 +92,7 @@ define([
 				t_scope.title = newVal;
 			});
 			$scope.$watch('ssoForms', function(newVal, oldVal, t_scope){
-				debugger;
+				//debugger;
 				t_scope.$parent.tt_ssoForms = newVal;
 			});
 			/*var contentHtml = '<p> content html </p>';
@@ -115,7 +123,7 @@ define([
 	app.directive('modelHtmlUnsafe', ['$compile', function($compile) {
 		function link($scope, $element, $attributes, controller){
 			$scope.$watch($attributes.modelHtmlUnsafe, function modelHtmlUnsafeWatchAction(value) {
-				debugger;
+				//debugger;
 				$element.html(value || '');
 				$compile($element.contents())($scope);
 			});

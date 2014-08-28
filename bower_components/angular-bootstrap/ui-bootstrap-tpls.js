@@ -2506,7 +2506,6 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
           'sso-forms="'+startSym+'tt_ssoForms'+endSym+'" '+
           '>'+
         '</div>';*/
-        debugger;
         var template = options.getTemplate(directiveName, startSym, endSym);
 
       return {
