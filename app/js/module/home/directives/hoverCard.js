@@ -5,14 +5,16 @@ define([
 	'use strict';
 
 	var openTrigger = function(){
-		//debugger;
+		debugger;
 	}
 
 	var closeTrigger = function(){
-		//
+		debugger;	
 	}
+
+	debugger;
 	//app.$myProvide.get('$tooltipProvider').setTriggers( {openTrigger: closeTrigger} ) ;
-/*	app.$myProvide.get('$tooltipProvider').options( {getTemplate:function(directiveName, startSym, endSym) {
+	app.$myProvide.get('$tooltipProvider').options( {getTemplate:function(directiveName, startSym, endSym) {
       return '<div '+ directiveName +'-popup '+
             'title="'+startSym+'tt_title'+endSym+'" '+
             'content="'+startSym+'tt_content'+endSym+'" '+
@@ -24,12 +26,12 @@ define([
             'title-html="'+startSym+'tt_titleHtml'+endSym+'" '+
             '>'+
           '</div>';
-    }} ) ;*/
+    }} ) ;
 
   	/* Directives */
 	app.directive('hovercard', [ '$tooltip', function($tooltip) {
 		var hover = $tooltip( 'hovercard', 'hovercard', 'click' );
-		//debugger;
+		debugger;
 		hover.scope = {
 			tt_ssoForms: '=ssoForms',
 			tt_contentHtml: '=contentHtml',
@@ -40,10 +42,12 @@ define([
 
 	app.directive('hovercardPopup', [ '$tooltip', function($tooltip) {
 		function link($scope, element, attributes, controller){
+			debugger;
 			/*var contentHtml = '<p> content html </p>';
 			$scope.content = 'contentHtml';*/
 		}
 		function controller( $scope, $element, $attrs ){
+			debugger;
 			/*var contentHtml = '<p> content html </p>';
 			$scope.content = 'contentHtml';*/
 		}
@@ -66,10 +70,12 @@ define([
 	
 	app.directive('popoverHtmlUnsafe', [ '$tooltip', function($tooltip) {
 		var hover = $tooltip( 'popoverHtmlUnsafe', 'popoverHtmlUnsafe', 'click' );
-		hover.scope = {
+		debugger;
+/*		hover.scope = {
 			tt_ssoForms: '=ssoForms',
 			tt_contentHtml: '=contentHtml',
 			tt_titleHtml: '=titleHtml'
+<<<<<<< HEAD
 		};
 		var compile = angular.copy(hover.compile);
 		hover.compile = function(tElem, tAttrs){
@@ -79,11 +85,15 @@ define([
             });
 			return compile(tElem, tAttrs);
 		}
+=======
+		};*/
+>>>>>>> parent of 8aac4ac... popover hack with two way binding
 		return hover;
 	}]);
 
 	app.directive('popoverHtmlUnsafePopup', [ '$tooltip', function($tooltip) {
 		function link($scope, element, attributes, controller){
+<<<<<<< HEAD
 /*			$scope.$parent.$watch('tt_ssoForms', function(newVal, oldVal, t_scope) {
 				debugger;
 				t_scope.ssoForms = newVal;
@@ -95,10 +105,14 @@ define([
 				//debugger;
 				t_scope.$parent.tt_ssoForms = newVal;
 			});
+=======
+			debugger;
+>>>>>>> parent of 8aac4ac... popover hack with two way binding
 			/*var contentHtml = '<p> content html </p>';
 			$scope.content = 'contentHtml';*/
 		}
 		function controller( $scope, $element, $attrs ){
+			debugger;
 			/*var contentHtml = '<p> content html </p>';
 			$scope.content = 'contentHtml';*/
 		}
@@ -108,20 +122,20 @@ define([
 			link : link,
 			controller : controller,
 			//transclude : true,
-			scope : {title: '@', content: '@', placement: '@', animation: '&', isOpen: '&', ssoForms: '=?tt_ssoForms'},
+			scope : {title: '@', content: '@', placement: '@', animation: '&', isOpen: '&', ssoForms: '@'},
 			//templateUrl: 'template/popover/popover.html'
 			template : '<div class="popover {{placement}}" ng-class="{ in: isOpen(), fade: animation() }"><div class="arrow"></div><div class="popover-inner">'+
-			'<h3 class="popover-title" ng-show="title"><div model-html-unsafe="title"></div></h3>'+
+			//'<h3 class="popover-title" ng-bind="title" ng-show="title"></h3>'+
+			'<h3 class="popover-title" ng-show="title"><div bind-html-unsafe="title"></div></h3>'+
 			'<div class="popover-content" ng-show="content"><div model-html-unsafe="content"></div></div>'+
-			'<p>{{ssoForms}}</p>'+
-			'<input ng-model="ssoForms" style="margin-top: 60px;">sso </input>'+
-			'<input ng-model="title" style="margin-top: 60px;">title</input>'+
 			'</div></div>'
 		}
 	}]);
 
 	app.directive('modelHtmlUnsafe', ['$compile', function($compile) {
 		function link($scope, $element, $attributes, controller){
+			debugger;
+			$element.addClass('ng-binding').data('$binding', $attributes.modelHtmlUnsafe);
 			$scope.$watch($attributes.modelHtmlUnsafe, function modelHtmlUnsafeWatchAction(value) {
 				//debugger;
 				$element.html(value || '');
@@ -129,7 +143,7 @@ define([
 			});
 		}
 		function controller($scope, $element, $attrs ){
-			//controller
+			debugger;
 		}
 		return {
 			restrict : 'EA',

@@ -12,7 +12,7 @@ define([
 		$scope.mySso = '123';
 		$scope.openHoverCard = true;
 		$scope.contentHtml = '<div class="myContent"><p>test popover content by html</p><br><input type="text"> test </input></div>';
-		$scope.titleHtml = '<div class="myTitle"><p>test popover title by html</p><br><input type="text"></input><br><p>{{mySso}}</p></div>';
+		$scope.titleHtml = '<div class="myTitle"><p>test popover title by html</p><br><input type="text"></input></div>';
 
 		$scope.$watch('mySso',function(newValue, oldValue, t_scope){
 			console.log(t_scope.mySso);
